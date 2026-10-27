@@ -1,0 +1,227 @@
+/* ==========================================================================
+   CAFÉ DO DEV - ESTILOS GERAIS
+   ========================================================================== */
+
+/* 1. Importação de fonte moderna e legível */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset e box-sizing básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================================================
+   BACKGROUND DA PÁGINA
+   ========================================================================== */
+body {
+    background-image: linear-gradient(rgba(20, 12, 8, 0.78), rgba(20, 12, 8, 0.78)), url('Café.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #1a0f0a; 
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL (GLASSMORPHISM)
+   ========================================================================== */
+.container {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 580px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(210, 180, 140, 0.3);
+}
+
+/* Título Principal */
+h1 {
+    text-align: center;
+    color: #4a2c11;
+    font-size: 2.1rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid #e0d0c1;
+    padding-bottom: 12px;
+}
+
+/* Subtítulos */
+h2 {
+    color: #6f4e37;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   SEÇÕES: MONTE SEU PEDIDO & SEU CARRINHO
+   ========================================================================== */
+.pedido, .carrinho {
+    background-color: #fdfaf7;
+    padding: 22px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    border: 1px solid #ebdcd0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Inputs do Formulário */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 1px solid #d1c2b4;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    transition: all 0.25s ease;
+    outline: none;
+    color: #333333;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+    color: #a09083;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #8c5a3c;
+    box-shadow: 0 0 0 3px rgba(140, 90, 60, 0.18);
+}
+
+/* ==========================================================================
+   BOTÕES COM TEMA CAFÉ
+   ========================================================================== */
+button {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.1s ease, box-shadow 0.25s ease;
+}
+
+/* Botão de Adicionar ao Carrinho */
+#adicionar-produto {
+    background-color: #4a7c59;
+}
+
+#adicionar-produto:hover {
+    background-color: #3b6347;
+    box-shadow: 0 4px 10px rgba(74, 124, 89, 0.25);
+}
+
+/* Botão de Salvar Pedido */
+#salvar-pedidos {
+    background-color: #8c5a3c;
+    margin-top: 15px;
+}
+
+#salvar-pedidos:hover {
+    background-color: #6f4e37;
+    box-shadow: 0 4px 10px rgba(140, 90, 60, 0.25);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   LISTA DO CARRINHO, ROLAGEM E BOTÃO REMOVER
+   ========================================================================== */
+#lista-pedidos {
+    list-style: none;
+    margin-bottom: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Estilização da Barra de Rolagem */
+#lista-pedidos::-webkit-scrollbar {
+    width: 6px;
+}
+
+#lista-pedidos::-webkit-scrollbar-track {
+    background: #f1ebd8;
+    border-radius: 4px;
+}
+
+#lista-pedidos::-webkit-scrollbar-thumb {
+    background: #c2b2a3;
+    border-radius: 4px;
+}
+
+#lista-pedidos::-webkit-scrollbar-thumb:hover {
+    background: #8c5a3c;
+}
+
+/* Itens da Lista */
+#lista-pedidos li {
+    background-color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #8c5a3c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#lista-pedidos li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilização Específica do Botão Remover */
+#lista-pedidos .remover {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    background-color: #dc3545;
+    color: #ffffff;
+    border-radius: 6px;
+    margin-left: 12px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#lista-pedidos .remover:hover {
+    background-color: #bb2d3b;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Exibição do Total do Pedido */
+.carrinho p {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2b1704;
+    text-align: right;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e0d0c1;
+}
+
+#total {
+    color: #2e7d32;
+}
